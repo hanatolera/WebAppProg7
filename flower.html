@@ -30,64 +30,181 @@
 
     <div id="score">Score is zero.</div>
 
-    <div>Click for help.</div>
+    <div onclick="help()">Click for help.</div>
 
     <div id="help">Help report</div>
 
     <div class="row">
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
+        <div class="location"><img id="img0" src="bush.jpg" onclick="check(0)"></div>
+        <div class="location"><img id="img1" src="bush.jpg" onclick="check(1)"></div>
+        <div class="location"><img id="img2" src="bush.jpg" onclick="check(2)"></div>
+        <div class="location"><img id="img3" src="bush.jpg" onclick="check(3)"></div>
+        <div class="location"><img id="img4" src="bush.jpg" onclick="check(4)"></div>
+        <div class="location"><img id="img5" src="bush.jpg" onclick="check(5)"></div>
     </div>
 
     <div class="row">
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
+        <div class="location"><img id="img6" src="bush.jpg" onclick="check(6)"></div>
+        <div class="location"><img id="img7" src="bush.jpg" onclick="check(7)"></div>
+        <div class="location"><img id="img8" src="bush.jpg" onclick="check(8)"></div>
+        <div class="location"><img id="img9" src="bush.jpg" onclick="check(9)"></div>
+        <div class="location"><img id="img10" src="bush.jpg" onclick="check(10)"></div>
+        <div class="location"><img id="img11" src="bush.jpg" onclick="check(11)"></div>
     </div>
 
     <div class="row">
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
+        <div class="location"><img id="img12" src="bush.jpg" onclick="check(12)"></div>
+        <div class="location"><img id="img13" src="bush.jpg" onclick="check(13)"></div>
+        <div class="location"><img id="img14" src="bush.jpg" onclick="check(14)"></div>
+        <div class="location"><img id="img15" src="bush.jpg" onclick="check(15)"></div>
+        <div class="location"><img id="img16" src="bush.jpg" onclick="check(16)"></div>
+        <div class="location"><img id="img17" src="bush.jpg" onclick="check(17)"></div>
     </div>
 
     <div class="row">
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
+        <div class="location"><img id="img18" src="bush.jpg" onclick="check(18)"></div>
+        <div class="location"><img id="img19" src="bush.jpg" onclick="check(19)"></div>
+        <div class="location"><img id="img20" src="bush.jpg" onclick="check(20)"></div>
+        <div class="location"><img id="img21" src="bush.jpg" onclick="check(21)"></div>
+        <div class="location"><img id="img22" src="bush.jpg" onclick="check(22)"></div>
+        <div class="location"><img id="img23" src="bush.jpg" onclick="check(23)"></div>
     </div>
 
     <div class="row">
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
+        <div class="location"><img id="img24" src="bush.jpg" onclick="check(24)"></div>
+        <div class="location"><img id="img25" src="bush.jpg" onclick="check(25)"></div>
+        <div class="location"><img id="img26" src="bush.jpg" onclick="check(26)"></div>
+        <div class="location"><img id="img27" src="bush.jpg" onclick="check(27)"></div>
+        <div class="location"><img id="img28" src="bush.jpg" onclick="check(28)"></div>
+        <div class="location"><img id="img29" src="bush.jpg" onclick="check(29)"></div>
     </div>
 
     <div class="row">
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
-        <div class="location"><img src="bush.jpg"></div>
+        <div class="location"><img id="img30" src="bush.jpg" onclick="check(30)"></div>
+        <div class="location"><img id="img31" src="bush.jpg" onclick="check(31)"></div>
+        <div class="location"><img id="img32" src="bush.jpg" onclick="check(32)"></div>
+        <div class="location"><img id="img33" src="bush.jpg" onclick="check(33)"></div>
+        <div class="location"><img id="img34" src="bush.jpg" onclick="check(34)"></div>
+        <div class="location"><img id="img35" src="bush.jpg" onclick="check(35)"></div>
     </div>
 
+    <script>
+        let ids = [
+            "img0", "img1", "img2", "img3", "img4", "img5",
+            "img6", "img7", "img8", "img9", "img10", "img11",
+            "img12", "img13", "img14", "img15", "img16", "img17",
+            "img18", "img19", "img20", "img21", "img22", "img23",
+            "img24", "img25", "img26", "img27", "img28", "img29",
+            "img30", "img31", "img32", "img33", "img34", "img35"
+        ];
+
+        let score = 0;
+        let locationsVisited = 0;
+        let lastLocation = 0;
+
+        let poisonLocation = 19;
+        let roseLocation = 14;
+        let lilyLocations = [3, 25];
+        let daisyLocations = [2, 5, 11, 20, 21];
+
+        let gameOver = false;
+
+        function check(position) {
+
+            if (gameOver) {
+                return;
+            }
+
+            let id = ids[position];
+            let image = document.getElementById(id);
+
+            if (position == poisonLocation) {
+                image.src = "poison.jpg";
+                score = score - 4;
+                gameOver = true;
+                image.onclick = null;
+            }
+            else if (position == roseLocation) {
+                image.src = "rose.jpg";
+                score = score + 4;
+                image.onclick = null;
+            }
+            else if (lilyLocations.includes(position)) {
+                image.src = "lily.jpg";
+                score = score + 2;
+                image.onclick = null;
+            }
+            else if (daisyLocations.includes(position)) {
+                image.src = "daisy.jpg";
+                score = score + 1;
+                image.onclick = null;
+            }
+
+            locationsVisited++;
+
+            document.getElementById("locations").innerHTML =
+                "Number of locations checked is " + locationsVisited + ".";
+
+            document.getElementById("score").innerHTML =
+                "Score is " + score + ".";
+
+            lastLocation = position;
+        }
+        function help() {
+            let result = "warm";
+
+            let row = Math.floor(lastLocation / 6);
+            let col = lastLocation % 6;
+
+            // Check four closest locations for daisies, allowing wrap around
+            let daisyChecks = [
+                (lastLocation + 1) % 36,
+                (lastLocation + 35) % 36,
+                (lastLocation + 6) % 36,
+                (lastLocation + 30) % 36
+            ];
+
+            for (let location of daisyChecks) {
+                if (daisyLocations.includes(location)) {
+                    result = "cold";
+                    document.getElementById("help").innerHTML = result;
+                    return;
+                }
+            }
+
+            // Check the 3 x 3 area around the last location for the rose
+            for (let r = row - 1; r <= row + 1; r++) {
+                for (let c = col - 1; c <= col + 1; c++) {
+                    if (r >= 0 && r < 6 && c >= 0 && c < 6) {
+                        let location = r * 6 + c;
+
+                        if (location == roseLocation) {
+                            result = "hot";
+                            document.getElementById("help").innerHTML = result;
+                            return;
+                        }
+                    }
+                }
+            }
+
+            // Check the 3 x 3 area for poison ivy
+            for (let r = row - 1; r <= row + 1; r++) {
+                for (let c = col - 1; c <= col + 1; c++) {
+                    if (r >= 0 && r < 6 && c >= 0 && c < 6) {
+                        let location = r * 6 + c;
+
+                        if (location == poisonLocation) {
+                            result = "watch out";
+                            document.getElementById("help").innerHTML = result;
+                            return;
+                        }
+                    }
+                }
+            }
+
+            document.getElementById("help").innerHTML = result;
+        }
+    </script>
 </body>
 
 </html>
