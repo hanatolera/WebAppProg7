@@ -21,22 +21,43 @@
   <h1>Hana Tolera reflexes</h1>
 
   <div id="target">Your time</div>
-
   <div id="counter">Count</div>
 
-  <button>Go</button>
-
+  <button onclick="beginTime()">Go</button>
   <button onclick="recordTime()">Halt</button>
 
   <script>
     let haltTime = undefined;
+
     function recordTime() {
       haltTime = Date.now();
       console.log(haltTime);
     }
 
-  </script>
+    function beginTime() {
+      haltTime = undefined;
 
+      for (let i = 0; i <= 5; i++) {
+        setTimeout(function () {
+          document.getElementById("counter").innerHTML = i;
+        }, (5 - i) * 1000);
+      }
+
+      setTimeout(function () {
+        if (haltTime == undefined) {
+          document.getElementById("target").innerHTML =
+            "Not soon enough";
+        }
+        else {
+          let targetTime = Date.now();
+          let elapsedTime = targetTime - haltTime;
+
+          document.getElementById("target").innerHTML =
+            "Time was " + elapsedTime;
+        }
+      }, 5000);
+    }
+  </script>
 </body>
 
 </html>
