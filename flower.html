@@ -102,12 +102,60 @@
         let locationsVisited = 0;
         let lastLocation = 0;
 
-        let poisonLocation = 19;
-        let roseLocation = 14;
-        let lilyLocations = [3, 25];
-        let daisyLocations = [2, 5, 11, 20, 21];
+    
+        let randomLocations = [];
+
+        while (randomLocations.length < 9) {
+            let randomLocation = Math.floor(Math.random() * 36);
+
+            if (!randomLocations.includes(randomLocation)) {
+                randomLocations.push(randomLocation);
+            }
+        }
+
+        let poisonLocation = randomLocations[0];
+        let roseLocation = randomLocations[1];
+        let lilyLocations = [randomLocations[2], randomLocations[3]];
+        let daisyLocations = [
+            randomLocations[4],
+            randomLocations[5],
+            randomLocations[6],
+            randomLocations[7],
+            randomLocations[8]
+        ];
 
         let gameOver = false;
+
+        function moveRose() {
+            let moved = false;
+
+            while (!moved) {
+                let direction = Math.floor(Math.random() * 4);
+
+                let row = Math.floor(roseLocation / 6);
+                let col = roseLocation % 6;
+
+                if (direction == 0 && row > 0) {
+                    roseLocation = roseLocation - 6;
+                    moved = true;
+                }
+
+                else if (direction == 1 && row < 5) {
+                    roseLocation = roseLocation + 6;
+                    moved = true;
+                }
+
+                else if (direction == 2 && col > 0) {
+                    roseLocation = roseLocation - 1;
+                    moved = true;
+                }
+
+                else if (direction == 3 && col < 5) {
+                    roseLocation = roseLocation + 1;
+                    moved = true;
+                }
+            }
+        }
 
         function check(position) {
 
@@ -149,14 +197,23 @@
                 "Score is " + score + ".";
 
             lastLocation = position;
+
+            if (!gameOver) {
+                moveRose();
+
+                if (roseLocation == position) {
+                    document.getElementById(ids[position]).src = "rose.jpg";
+                    gameOver = true;
+                }
+            }
         }
+
         function help() {
             let result = "warm";
 
             let row = Math.floor(lastLocation / 6);
             let col = lastLocation % 6;
 
-            // Check four closest locations for daisies, allowing wrap around
             let daisyChecks = [
                 (lastLocation + 1) % 36,
                 (lastLocation + 35) % 36,
@@ -172,7 +229,6 @@
                 }
             }
 
-            // Check the 3 x 3 area around the last location for the rose
             for (let r = row - 1; r <= row + 1; r++) {
                 for (let c = col - 1; c <= col + 1; c++) {
                     if (r >= 0 && r < 6 && c >= 0 && c < 6) {
@@ -187,7 +243,6 @@
                 }
             }
 
-            // Check the 3 x 3 area for poison ivy
             for (let r = row - 1; r <= row + 1; r++) {
                 for (let c = col - 1; c <= col + 1; c++) {
                     if (r >= 0 && r < 6 && c >= 0 && c < 6) {
